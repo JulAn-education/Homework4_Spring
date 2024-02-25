@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+<h1>Persons</h1>
+<h2>View persons</h2>
+
+<table>
+    <tr>
+        <th>name</th>
+        <th>age</th>
+    </tr>
+    <tr th:each="p: ${persons}" >
+        <td th:text="${p.name}"></td>
+        <td th:text="${p.age}"></td>
+
+    </tr>
+</table>
+
+<h2>Add person</h2>
+<form action="/persons" method="post">
+    Name: <input type="text" name="name"><br />
+    Age: <input type="number" step="any" name="age"><br />
+    <button type="submit">Add person</button>
+</form>
+</body>
+</html>
